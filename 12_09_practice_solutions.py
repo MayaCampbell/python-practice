@@ -80,8 +80,6 @@ def ispalindrome(string):
     if string  == new_string:
         return True
     return False
- 
-print(ispalindrome(string))
 
 #Fizzbuzz- Create a function that will print numbers from 1 to 100, with certain exceptions:
   #If the number is a multiple of 3, print “Fizz” instead of the number.

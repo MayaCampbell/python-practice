@@ -62,20 +62,22 @@ for form in root.findall("./genre/decade/movie/format"): #larger check of what w
         form.set('multiple', 'Yes') #set()- set elements attribute
     else:
         form.set('multiple', "No")
-    print(form.attrib, form.text)
+    #print(form.attrib, form.text)
 
 #check to see if decades match up with years text
 for decade in root.findall("./genre/decade"): #getting decade (.) starts at root
-    print(decade.attrib) #getting decase attribute
+    #print(decade.attrib) #getting decase attribute
     for year in decade.findall("./movie/year"): # (.) at decade
-        print(year.text, '\n') #print text inside year (/n - creates new line)
+        #print(year.text, '\n') #print text inside year (/n - creates new line)
+        pass
 
 #fix decade beace year should be correct
 #create decade
 #need to know what the movie is
 
 for movie in root.findall("./genre/decade/movie[year='2000']"): #shows what movies where release in 2000s
-    print(movie.attrib)
+    #print(movie.attrib)
+    pass
 
 #add decade to action genre because X-Men in action genre
 add= root.find("./genre[@category='Action']") #go into action genre
@@ -92,14 +94,15 @@ for genre in root.findall("./genre"): #getting decade (.) starts at root
 
 #movie X-men from 1990s to 2000s in action genre
 #first make a copy and add xmen to 2000s
-xmen= root.find("./genre/decade/movie[@title='X-men']")
+xmen= root.find("./genre/decade/movie[@title='X-Men']")
+print(xmen)
 decade2000= root.find("./genre[@category='Action']/decade[@years='2000s']")
 decade2000.append(xmen)
 print(ET.tostring(add, encoding='utf8').decode('utf8'))
 
 #delete x-men from old category
-#decade1990=root.find("./genre[@category='Action']/decade[@years='1990s']")
-#decade1990.remove(xmen)
-#print(ET.tostring(add, encoding='utf8').decode('utf8'))
+decade1990=root.find("./genre[@category='Action']/decade[@years='1990s']")
+decade1990.remove(xmen)
+print(ET.tostring(add, encoding='utf8').decode('utf8'))
 
-#tree.write('movies.xml')
+tree.write('movies.xml')
