@@ -28,6 +28,7 @@ for attempt in range(1,7):
             print(colored(guess[i], 'yellow'), end="")
         else:
             print(guess[i], end="")  
+            
         if guess == word:
             print(colored(f"Congrats! You guessed the word in {attempt}"))  
 
