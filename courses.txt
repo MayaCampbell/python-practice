@@ -1,3 +1,0 @@
-Course Id, Course Name, Instructor
-CSIPL01, Intro to A+, Valerie Boss
-CSILP02, Intro to Python, Sammi G
